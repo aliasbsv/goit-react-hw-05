@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  font-size: 22px;
+  list-style-type: none;
+  transition: all 250ms;
+}
+
+.active {
+  color: rgb(243, 191, 3);
+}
