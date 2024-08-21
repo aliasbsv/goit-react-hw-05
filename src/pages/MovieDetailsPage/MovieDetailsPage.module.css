@@ -1,3 +1,7 @@
+.backLink {
+  margin-bottom: 40px;
+}
+
 .backLink,
 .additionalLink {
   font-size: 14px;
@@ -18,14 +22,73 @@
   text-decoration: none;
 }
 
+.mainBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.tumbPoster {
+  overflow: hidden;
+  align-self: flex-start;
+  flex: 1 1 auto;
+  box-shadow: 0px 0px 8px 0px #fafafa;
+}
+
+.poster {
+  max-width: 100%;
+  height: auto;
+}
+
 .additionalList {
   display: flex;
   gap: 15px;
 }
 
+.contentTitle {
+  font-size: 42px;
+  line-height: 2;
+}
+
+.category {
+  margin-bottom: 30px;
+}
+
+.contentSubtitle,
+.additionalTitle {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 420px) {
+  .tumbPoster {
+    align-self: center;
+    width: 300px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .mainBlock {
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
+  .tumbPoster {
+    flex: 1 1 30%;
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .content {
+    flex: 1 1 65%;
+    align-self: flex-start;
+  }
+
+  .additionalBlock {
     display: flex;
-    gap: 40px;
+    flex-direction: column;
+    row-gap: 30px;
   }
 }

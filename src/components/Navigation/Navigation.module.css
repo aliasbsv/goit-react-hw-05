@@ -8,6 +8,9 @@
   list-style-type: none;
   transition: all 250ms;
 }
+.link:hover {
+  text-decoration: underline;
+}
 
 .active {
   color: rgb(243, 191, 3);

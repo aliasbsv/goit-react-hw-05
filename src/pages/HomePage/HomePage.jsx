@@ -1,34 +1,48 @@
 import { useEffect, useState } from 'react';
 import { fetchTrandingMoviesData } from '../../services/movies-api';
+import { sendErrorNotification } from '../../services/messages';
 
 import MovieList from '../../components/MovieList/MovieList';
 import Loader from '../../components/Loader/Loader';
+import css from './HomePage.module.css';
 
-const HomePage = ({ loading, setLoading, error, setError }) => {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setError(false);
-
     const fetchMovies = async () => {
+      setLoading(true);
+
       try {
-        setLoading(true);
         const data = await fetchTrandingMoviesData();
         setMovies(data.results);
       } catch (err) {
-        setError(err.message);
+        sendErrorNotification(
+          err.message || 'Failed to fetch movies. Please try again later.'
+        );
       } finally {
         setLoading(false);
       }
     };
+
     fetchMovies();
-  }, [setLoading, setError]);
+  }, []);
 
   return (
-    <section className="homePage">
-      <h1>Trending today</h1>
-      {loading && <Loader />}
-      {error ? <p>{error}</p> : <MovieList movies={movies} />}
+    <section>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <h1 className={css.title}>TOP the most popular movies today</h1>
+          {movies.length > 0 ? (
+            <MovieList movies={movies} />
+          ) : (
+            <p>No movies found. Please try again later.</p>
+          )}
+        </>
+      )}
     </section>
   );
 };

@@ -1,34 +1,44 @@
 .form {
   display: flex;
-
   justify-content: center;
-  align-items: center;
   column-gap: 5px;
   margin-bottom: 20px;
 }
 
 .input {
   line-height: 1.5;
-  border-radius: 8px;
-  min-width: 300px;
+  min-width: 400px;
   padding-left: 15px;
-}
-
-.button {
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  align-self: center;
-  line-height: 1;
-  min-width: 100px;
+  background-color: rgba(249, 247, 247, 0.848);
 }
 
 .input,
 .button {
+  font-size: 15px;
   display: inline-block;
-  height: 40px;
+  height: 45px;
   transition: all 250ms linear;
+  text-transform: uppercase;
   cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  letter-spacing: 0.1em;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: all 300ms;
+  background-color: transparent;
+  min-width: 130px;
+  border-color: rgb(243, 191, 3);
+  color: rgb(243, 242, 242);
+}
+
+.button:hover,
+.button:focus {
+  background-color: rgba(243, 191, 3, 1.18);
+  color: black;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 767px) {

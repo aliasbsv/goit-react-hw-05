@@ -1,0 +1,23 @@
+.notFound {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #ff0000; /* Цвет для заголовка */
+}
+
+.message {
+  font-size: 1.2rem;
+}
+
+.link {
+  font-size: 1rem;
+  color: #007bff; /* Цвет для ссылки */
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #0056b3; /* Цвет при наведении на ссылку */
+}
